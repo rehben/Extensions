@@ -1,0 +1,27 @@
+{
+	"name": "VC_Form_D",
+	"manifest_version": 2,
+	"version": "1.0",
+	"description": "Interprets SEC Form D flings for VC team",
+	"browser_action": {
+		"default_icon": "icon_vc.png",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"https://www.sec.gov/*FormD*"
+			],
+			"js": [
+				"jquery-3.1.1.min.js",
+				"contentscript.js"
+			]
+		}
+	],
+
+	"permissions": [
+		"tabs",
+		"https://sec.gov/",
+		"activeTab"
+	]
+}
